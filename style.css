@@ -29,6 +29,9 @@ body {
   height: 2.5rem;
   border-top-left-radius: 1rem;
   border-bottom-right-radius: 1rem;
+  -webkit-box-shadow: 2px 9px 37px 12px rgba(255, 5, 26, 1);
+  -moz-box-shadow: 2px 9px 37px 12px rgba(255, 5, 26, 1);
+  box-shadow: 2px 9px 37px 12px rgb(124, 63, 1);
 }
 
 ::placeholder {
@@ -45,87 +48,173 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: start;
-  gap: 1rem;
-
   position: relative;
 }
 
 .list2 {
-    position: absolute;
-    top: 10%;
-    left: -6%;
-    width: 100%;
-    color: rgb(160, 2, 2);
-    font-weight: 500;
-    font-style: italic;
-  
-    
-  }
+  position: absolute;
+  top: 10%;
+  left: -6%;
+  width: 100%;
+  color: rgb(7, 0, 0);
+  font-weight: 500;
+  font-style: italic;
+}
 
+ul li span {
+  position: absolute;
+  right: 0;
+  width: 2.5rem;
+  height: 2.4rem;
+  font-size: 1.25rem;
+  color: #555;
+  line-height: 2.1875rem;
+  text-align: center;
+}
 
-  ul li span {
-    position: absolute;
-    right: 0;
-    top: 5px;
-    width: 40px;
-    height: 40px;
-    font-size: 22px;
-    color: #555;
-    line-height: 40px;
-    text-align: center;
-  }
-  
-  .bucket-item {
-    list-style-type: none;
-    padding-left: 25px; 
-    position: relative; 
-  }
-  
-  .bucket-item::before {
-    content: "🔥"; 
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 1.125rem; 
-  }
+.bucket-item {
+  list-style-type: none;
+  padding-left: 25px;
+  position: relative;
+}
 
- 
+.bucket-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.125rem;
+}
+
+.fa-fire {
+  color: rgb(0, 0, 0);
+}
 
 .btn-danger:hover {
   background-color: rgb(0, 0, 0);
 }
 
+.delete-btn {
+  cursor: pointer;
+}
+
+.delete-btn i {
+  transition: color 0.3s ease;
+  color: rgb(19, 19, 18);
+}
+
+.delete-btn:hover i {
+  color: rgb(245, 209, 4);
+}
+
+.todoDiv {
+  background-color: #ffe53b;
+  background-image: linear-gradient(147deg, #ffe53b 0%, #ff2525 74%);
+
+  opacity: 0.7;
+  height: 2.1rem;
+  line-height: 2rem;
+  border-radius: 0.5rem;
+}
+
+.List {
+  padding: 10px 0;
+}
+
+.bucket-item {
+  padding: 5px 0;
+}
+
+.animation-container {
+  width: 100%;
+  height: 300px;
+  position: relative;
+  overflow: hidden;
+}
+
+.cat {
+  width: 100px;
+  position: absolute;
+  animation: catMove 5s linear infinite;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.bucket-item {
+  position: relative;
+  padding-left: 25px;
+}
+
+.flame-icon {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgb(2, 0, 0);
+}
 
 .delete-btn {
-    cursor: pointer;
-  }
-  
-  .delete-btn i {
-    transition: color 0.3s ease;
-  }
-  
-  .delete-btn:hover i {
-    color: red;
-  }
+  z-index: 1000;
+}
 
-  .todoDiv{
-    background-color: #eea810;
-    opacity: 0.7;
- 
-  margin-right: 3rem;
+@keyframes catMove {
+  0% {
+    bottom: 6.25rem;
+    opacity: 0;
   }
+  10% {
+    opacity: 1;
+  }
+  45% {
+    left: 50%;
+    transform: translatey(-10%);
+  }
+  55% {
+    left: 50%;
+    transform: translatey(30%);
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    left: calc(10% + 50px);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+
+.fade-out {
+  animation: fadeOut 1s ease-out forwards;
+}
 
 @media (max-width: 768px) {
   .container {
     display: flex;
     flex-direction: column;
     justify-content: start !important ;
-    
+  }
+  @media (max-width: 768px) {
+    .todoDiv {
+    }
+
+    .delete-btn {
+      cursor: pointer;
+    }
   }
 
-  .list2{
-    margin-top: 8rem;
+  .list2 {
+    margin-top: 5rem;
   }
   .form {
     height: auto;
@@ -140,6 +229,8 @@ h1 {
   .col {
     flex-direction: column;
     align-items: center;
+
+    height: 0.1rem !important;
   }
 
   .btn-danger {
