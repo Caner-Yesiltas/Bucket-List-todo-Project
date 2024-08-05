@@ -5,7 +5,7 @@
 }
 
 body {
-  background-image: url(./giphy\ \(4\).webp);
+  background-image: url(./1323255.png);
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -38,26 +38,95 @@ body {
   font-style: italic;
 }
 h1 {
-  color: darkslateblue;
+  color: rgb(223, 15, 15);
+  font-style: italic;
 }
 .col {
   display: flex;
   justify-content: center;
   align-items: start;
   gap: 1rem;
+
+  position: relative;
 }
+
+.list2 {
+    position: absolute;
+    top: 10%;
+    left: -6%;
+    width: 100%;
+    color: rgb(160, 2, 2);
+    font-weight: 500;
+    font-style: italic;
+  
+    
+  }
+
+
+  ul li span {
+    position: absolute;
+    right: 0;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    color: #555;
+    line-height: 40px;
+    text-align: center;
+  }
+  
+  .bucket-item {
+    list-style-type: none;
+    padding-left: 25px; 
+    position: relative; 
+  }
+  
+  .bucket-item::before {
+    content: "🔥"; 
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.125rem; 
+  }
+
+ 
 
 .btn-danger:hover {
   background-color: rgb(0, 0, 0);
 }
+
+
+.delete-btn {
+    cursor: pointer;
+  }
+  
+  .delete-btn i {
+    transition: color 0.3s ease;
+  }
+  
+  .delete-btn:hover i {
+    color: red;
+  }
+
+  .todoDiv{
+    background-color: #eea810;
+    opacity: 0.7;
+ 
+  margin-right: 3rem;
+  }
 
 @media (max-width: 768px) {
   .container {
     display: flex;
     flex-direction: column;
     justify-content: start !important ;
+    
   }
 
+  .list2{
+    margin-top: 8rem;
+  }
   .form {
     height: auto;
     padding: 2rem 1rem;
