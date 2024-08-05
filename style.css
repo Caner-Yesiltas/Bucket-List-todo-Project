@@ -205,14 +205,13 @@ ul li span {
     flex-direction: column;
     justify-content: start !important ;
   }
-  @media (max-width: 768px) {
-    .todoDiv {
-    }
 
+ 
+  
     .delete-btn {
       cursor: pointer;
     }
-  }
+  
 
   .list2 {
     margin-top: 5rem;
